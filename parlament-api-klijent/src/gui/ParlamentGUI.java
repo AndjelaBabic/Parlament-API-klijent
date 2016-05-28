@@ -16,6 +16,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.table.DefaultTableModel;
 
+import tablemodel.ParlamentTableModel;
+
 public class ParlamentGUI extends JFrame {
 
 	private JPanel contentPane;
@@ -69,13 +71,7 @@ public class ParlamentGUI extends JFrame {
 	private JTable getTable() {
 		if (table == null) {
 			table = new JTable();
-			table.setModel(new DefaultTableModel(
-				new Object[][] {
-				},
-				new String[] {
-					"Id", "Ime", "Prezime", "Datum ro\u0111enja"
-				}
-			));
+			table.setModel(new ParlamentTableModel());
 			table.getColumnModel().getColumn(3).setPreferredWidth(89);
 		}
 		return table;
